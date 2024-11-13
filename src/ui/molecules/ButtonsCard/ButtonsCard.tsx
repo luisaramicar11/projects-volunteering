@@ -11,14 +11,14 @@ interface ActionButtonsProps {
 const ActionButtons: React.FC<ActionButtonsProps> = ({ onEdit, onDelete }) => {
   return (
     <div className={styles.divButtonsContainer}>
-      <Button
-        onClick={onEdit} 
-        className={styles.buttonEdit}
-      />
+      <Button onClick={onEdit} 
+      className={styles.buttonEdit}>
+      Editar
+      </Button>
       <Button 
         onClick={onDelete} 
         className={styles.buttonDelete}
-      />
+      >Eliminar</Button>
     </div>
   );
 };

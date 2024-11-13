@@ -1,4 +1,3 @@
-import { IOrganizer } from "@/app/core/application/dto";
 import TableDataCell from "@/ui/atoms/Td";
 import TableDataRow from "@/ui/atoms/Tr";
 import ActionButtons from "../../ButtonsCard/ButtonsCard";
@@ -10,7 +9,7 @@ interface TableRowProps {
     startDate: Date;
     endDate: Date;
     isActive: boolean;
-    organizer: IOrganizer;
+    organizer: string;
     onEdit: () => void;
     onDelete: () => void;
 }
@@ -20,10 +19,10 @@ const TableRow: React.FC<TableRowProps> = ({ title, description, startDate, endD
         <TableDataRow classname={styles.tr}>
             <TableDataCell classname={styles.td}>{title}</TableDataCell>
             <TableDataCell classname={styles.td}>{description}</TableDataCell>
-            <TableDataCell classname={styles.td}>{startDate.toLocaleDateString()}</TableDataCell>
-            <TableDataCell classname={styles.td}>{endDate.toLocaleDateString()}</TableDataCell>
+            <TableDataCell classname={styles.td}>{(startDate).toString()}</TableDataCell>
+            <TableDataCell classname={styles.td}>{(endDate).toString()}</TableDataCell>
             <TableDataCell classname={styles.td}>{isActive? 'Active' : 'Inactive'}</TableDataCell>
-            <TableDataCell classname={styles.td}>{organizer.name}</TableDataCell>
+            <TableDataCell classname={styles.td}>{organizer}</TableDataCell>
             <TableDataCell classname={styles.td}><ActionButtons onEdit={onEdit} onDelete={onDelete}/></TableDataCell> 
         </TableDataRow>
     );
