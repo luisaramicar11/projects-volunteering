@@ -1,0 +1,36 @@
+@import "../../../assets/styles/variables.scss";
+
+.divButtonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+
+  .buttonEdit {
+    padding: 8px;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100px;
+    background-color: $gradient-background-white;
+    color: $text-black;
+    border: 1px solid $gradient-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttonDelete {
+    padding: 8px;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100px;
+    background-color: $text-error;
+    color: $text-white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

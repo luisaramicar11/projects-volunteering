@@ -1,0 +1,17 @@
+@import "../../../assets//styles/variables.scss";
+
+.divContainer{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(150dg, $gradient-background-blue, $gradient-background-white);
+
+    .div{
+        background-color: $gradient-background-white;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

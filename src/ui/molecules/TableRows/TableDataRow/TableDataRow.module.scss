@@ -1,0 +1,9 @@
+@import "../../../../assets/styles/variables.scss";
+.tr{
+    border-bottom: 1px solid $border-input;
+    .td{
+        padding: 10px;
+        border: none;
+        text-align: left;
+    }
+}
