@@ -46,8 +46,8 @@ const ProjectsTemplate = ({ data, pagination}: IProjectsProps) => {
       </div>
       <PageNavigation
         pagination={pagination}
-        onNext={()=>handleNext(currentPage)}
-        onPrevious={()=>handlePrevious(currentPage)}
+        onNext={()=>handleNext(currentPage+1)}
+        onPrevious={()=>handlePrevious(currentPage-1)}
       />
     </div>
   );

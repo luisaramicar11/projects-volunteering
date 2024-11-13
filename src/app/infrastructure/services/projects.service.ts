@@ -31,7 +31,7 @@ export class ProjectService  {
 
     async update(id: number, project: IProjectRequest){
         try {
-            const updatedProject = await this.httpClient.put<IProjectResponse, IProjectRequest>(`projects/${id}`, project)
+            const updatedProject = await this.httpClient.patch<IProjectResponse, IProjectRequest>(`projects/${id}`, project)
             return updatedProject;
         } catch (error) {
             console.log(error);

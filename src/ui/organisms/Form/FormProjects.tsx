@@ -139,7 +139,7 @@ export const ProjectForm = ({ initialData, onClose }: IProjectsFormProps) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-            <Text classname={styles.h1}>{initialData ? "Editar Cliente" : "Agregar Cliente"}</Text>
+            <Text classname={styles.h1}>{initialData ? "Editar Proyecto" : "Agregar Proyecto"}</Text>
 
             <FormField<IProjectRequest>
                 control={control}

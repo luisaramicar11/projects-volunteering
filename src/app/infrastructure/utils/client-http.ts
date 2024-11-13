@@ -12,6 +12,7 @@ export class HttpClient {
 
   private async getHeader() {
     const session = await getServerSession(authOptions);
+    console.log(session?.user.token);
     const headers: { [key: string]: string} = {
       "Content-Type": "application/json",
     }
@@ -59,11 +60,11 @@ export class HttpClient {
     return this.handleResponse(response);
   }
 
-  async put <T, B> (url: string, body:B): Promise<T>{
+  async patch <T, B> (url: string, body:B): Promise<T>{
     const headers = await this.getHeader();
     const response = await fetch(`${this.baseUrl}/${url}`,{
       headers: headers,
-      method: "PUT",
+      method: "PATCH",
       body : JSON.stringify(body),
     })
     return this.handleResponse(response);
