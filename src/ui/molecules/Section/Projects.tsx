@@ -30,10 +30,18 @@ const Section = ({project}: sectionProps) => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const handleSignOut = () => {
-    signOut(); 
-    router.push('/login');
-
+  const handleSignOut = async () => {
+    try {
+      // Realiza el signOut y especifica la página de redirección
+      await signOut({ 
+        redirect: true,
+        callbackUrl: '/login' // o la ruta que prefieras para el login
+      });
+    } catch (error) {
+      console.error('Error during sign out:', error);
+      // Opcionalmente, puedes forzar la redirección si el signOut falla
+      router.push('/login');
+    }
   };
 
   const handleDownloadReport = async () => {

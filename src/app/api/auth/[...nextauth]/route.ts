@@ -18,13 +18,13 @@ interface AuthUser {
     photo: string;
 }
 
-interface CustomSession extends Session {
+export interface CustomSession extends Session {
     user: {
         id?: string;
         token?: string;
-        email?: string;
-        role?: string;
-        photo?: string;
+        email?: string | null;
+        role?: string | null;
+        photo?: string | null;
     }
 }
 
@@ -83,6 +83,7 @@ export const authOptions: NextAuthOptions = {
                 }
                 token.id = authUser.id;
                 token.token = authUser.token;
+                token.email= authUser.email;
                 token.photo = authUser.photo;
                 token.role = authUser.role;
             }

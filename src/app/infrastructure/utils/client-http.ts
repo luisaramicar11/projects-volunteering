@@ -12,6 +12,7 @@ export class HttpClient {
 
   private async getHeader(formData: boolean = false){
     const session = await getServerSession(authOptions);
+    console.log(session?.user)
     const headers: HeadersInit = {};
     //console.log(session?.user.token);
     if(formData === false){

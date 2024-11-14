@@ -25,10 +25,12 @@ const Dropdown = ({ user, signOut }: DropdownProps) => {
         <div className={styles.profile} onClick={toggleDropdown}>
         <div className={styles.avatar}>
         {user?.photo ? (
-                    <Image
+                    <img
                         src={user.photo}
                         alt="Foto de perfil"
                         className={styles.avatarImage}
+                        width={50}
+                        height={50}
                     />
                 ) : (
                     <p>No se ha cargado la foto de perfil</p>

@@ -27,7 +27,7 @@ export default function ContainerCard({ allData }: cardProps) {
       .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())[0];
 
     if (nextProject) {
-      setNextProjectDate(new Date(nextProject.startDate).toString());
+      setNextProjectDate(new Date(nextProject.startDate).toLocaleDateString());
     } else {
       setNextProjectDate('No disponible');
     }

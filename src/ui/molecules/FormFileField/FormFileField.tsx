@@ -29,7 +29,10 @@ export const FormFileField = <T extends FieldValues>({
                         className={styles.input}
                         type="file"
                         id={id || label.toLowerCase()}
-                        {...field}
+                        onChange={(e) => {
+                            const file = e.target.files?.[0] || null;
+                            field.onChange(file);
+                        }}
                         accept={accept}
                     />
                 )}
