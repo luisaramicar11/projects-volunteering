@@ -5,4 +5,6 @@ export * from './PageNavigation/PageNavigation';
 export * from './FormSelect/FormSelect';
 export * from './FormFileField/FormFileField';
 export * from './FormField/FormField';
+export * from './Dropdown/Dropdown';
+export * from './Card/Card';
 export * from './ButtonsCard/ButtonsCard';

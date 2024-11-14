@@ -3,20 +3,55 @@ import React from 'react';
 import { useState } from "react";
 import styles from "./Projects.module.scss"
 import Button from '@/ui/atoms/Button';
-import { Datum } from '@/app/core/application/dto';
+import { Datum, EndpointReports } from '@/app/core/application/dto';
 import Modal from '@/ui/organisms/Modal/Modal';
 import { GrAddCircle } from "react-icons/gr";
 import { LuFileSpreadsheet } from "react-icons/lu";
-import Links from '@/ui/atoms/Link/Link';
+import { useSession } from 'next-auth/react';
+import Dropdown from '../Dropdown/Dropdown';
+import { signOut } from 'next-auth/react';
 interface sectionProps {
   project: Datum | null;
 }
 
 const Section = ({project}: sectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const {data: session} = useSession()
+
+  if (!session || !session.user || !session.user.email) {
+    // Si no hay sesión o no hay email, no renderizamos el componente
+    return null;
+  }
+
+  const user = session.user;
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const handleSignOut = () => {
+    signOut(); // Cierra sesión utilizando next-auth
+  };
+
+  const handleDownloadReport = async () => {
+    try {
+      const res = await fetch(EndpointReports.GET_REPORTS, {
+        method: "GET",
+      })
+      if (!res.ok) {
+        throw new Error("Error descargando el reporte");
+    }
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "reportes_proyectos.xlsx";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    } catch (error) {
+      console.log("Error descargando los reportes", error)
+    }
+  }
 
   return (
     <div className={styles.div}>
@@ -24,7 +59,7 @@ const Section = ({project}: sectionProps) => {
       <div className={styles.titleContainer}>
         <h1 className={styles.mainTitle}>Dashboard de Proyectos</h1>
       </div>
-      <Button className={styles.button}>
+      <Button className={styles.button} onClick={handleDownloadReport}>
       {<LuFileSpreadsheet />}
       Descargar Reporte
       </Button>
@@ -32,12 +67,7 @@ const Section = ({project}: sectionProps) => {
       {<GrAddCircle />}
       Nuevo proyecto
       </Button>
-      <Links
-          href="/"
-          className={styles.profileLink}
-          label={"Profile"}
-          icon={<GrAddCircle />}
-        />
+      <Dropdown user={user} signOut={handleSignOut}/>
           <Modal isOpen={isModalOpen} onClose={closeModal} project={project} />
     </div>
     </div>
