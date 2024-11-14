@@ -1,0 +1,28 @@
+@import "../../../assets/styles/variables.scss";
+
+.div{
+    display: flex;
+    flex-direction: column;
+
+    .select {
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        border: 1px solid $border-input;
+        color: $text-gray;
+        &::placeholder {
+            color: #a0aec0;
+          }
+        
+          &:focus {
+            outline: none;
+            border-color: transparent;
+            box-shadow: 0 0 0 2px #4299e1;
+          }
+    }
+
+    .p {
+        margin-top: 0.5rem;
+        color: $text-error;
+        font-size: 0.8rem;
+    }
+}

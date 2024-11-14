@@ -1,0 +1,63 @@
+@import "../../../assets/styles/variables.scss";
+
+.headerContainer {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+
+    .titleContainer {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .buttonsContainer {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+    }
+
+    .mainTitle {
+        color: $text-links;
+    }
+
+    .buttonLogin{
+        padding: 1px;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        width: 100px;
+        background-color: $gradient-background-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .buttonRegister{
+        padding: 1px;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        width: 100px;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .linkLogin{
+        color: #000;
+        text-decoration: none;
+    }
+    .linkRegister{
+        color: #fff;
+        text-decoration: none;
+    }
+}

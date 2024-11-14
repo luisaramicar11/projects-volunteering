@@ -1,0 +1,51 @@
+@import "../../../assets/styles/variables.scss";
+
+.sidebarContainer {
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+
+    .titleContainer {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        height: 60px;
+    }
+
+    .mainTitle {
+        padding: 15px;
+        color: #000;
+        width: 100%;
+        height: 100%;
+    }
+
+    .linksContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+    
+        > * {
+            cursor: pointer;
+            width: 100%;
+            padding-left: 15px;
+        }
+    
+        @media (max-width: 770px) {
+            gap: 10px;
+        }
+    }
+
+    .activeLink{
+        background-color: $border-input;
+    }
+}

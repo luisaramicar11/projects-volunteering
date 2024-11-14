@@ -1,9 +1,50 @@
+@import "../../../assets/styles/variables.scss";
+
 .div{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  background-color: transparent;
+  width: 80%;
+  margin-left: auto;
+}
+
+.headerContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+
+    .titleContainer {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .buttonsContainer {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+    }
+
+    .mainTitle {
+        color: #000;
+    }
+
+    .profileLink {
+        color: #000;
+    }
+    .button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background-color: #000;
+      color: #fff;
+      font-size: 0.8rem;
+    }
 }
   
