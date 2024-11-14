@@ -38,6 +38,7 @@ export const ProjectForm = ({ initialData, onClose }: IProjectsFormProps) => {
         handleSubmit,
         setError,
         setValue,
+        reset,
         formState: { errors },
     } = useForm<IProjectRequest>({
         mode: "onChange",
@@ -71,7 +72,10 @@ export const ProjectForm = ({ initialData, onClose }: IProjectsFormProps) => {
                 throw new Error("Error creando el proyecto");
             }
             const createdProject= await res.json();
+            reset(initialProjectsData);
             onClose();
+            router.refresh();
+            
             console.log("Proyecto creado", createdProject);
         } catch (error) {
             console.error("Error creando proyecto", error);
