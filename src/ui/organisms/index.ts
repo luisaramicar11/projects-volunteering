@@ -1,3 +1,4 @@
+export * from './auth/LoginForm';
 export * from './Table/TableProjects';
 export * from './Sidebar/Sidebar';
 export * from './Register/RegisterForm';
@@ -6,4 +7,4 @@ export * from './Modal/ModalStyles';
 export * from './HomePage/HomePage';
 export * from './HeaderOffline/HeaderOffline';
 export * from './Form/FormProjects';
-export * from './auth/LoginForm';
+export * from './CardsContainer/CardsContainer';

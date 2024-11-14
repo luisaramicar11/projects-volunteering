@@ -28,10 +28,7 @@ const Dropdown = ({ user, signOut }: DropdownProps) => {
                     <Image
                         src={user.photo}
                         alt="Foto de perfil"
-                        width={80}
-                        height={80}
-                        quality={100}
-                        className="rounded-full w-9 h-9"
+                        className={styles.avatarImage}
                     />
                 ) : (
                     <p>No se ha cargado la foto de perfil</p>

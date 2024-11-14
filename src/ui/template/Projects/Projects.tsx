@@ -7,7 +7,7 @@ import styles from "./Projects.module.scss"
 import Section from '@/ui/molecules/Section/Projects';
 import Table from '@/ui/organisms/Table/TableProjects';
 import PageNavigation from '@/ui/molecules/PageNavigation/PageNavigation';
-
+import ContainerCard from '@/ui/organisms/CardsContainer/CardsContainer';
 
 interface IProjectsProps {
   pagination: Metadata,
@@ -42,6 +42,7 @@ const ProjectsTemplate = ({ data, pagination}: IProjectsProps) => {
     <div className={styles.div}>
       <div className={styles.contentWrapper }>
         <Section project={null}/>
+        <ContainerCard allData={data}/>
         <Table allData={data}/>
       </div>
       <PageNavigation

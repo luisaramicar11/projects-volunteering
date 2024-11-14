@@ -10,6 +10,7 @@ import { LuFileSpreadsheet } from "react-icons/lu";
 import { useSession } from 'next-auth/react';
 import Dropdown from '../Dropdown/Dropdown';
 import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 interface sectionProps {
   project: Datum | null;
 }
@@ -17,6 +18,7 @@ interface sectionProps {
 const Section = ({project}: sectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const {data: session} = useSession()
+  const router = useRouter();
 
   if (!session || !session.user || !session.user.email) {
     // Si no hay sesión o no hay email, no renderizamos el componente
@@ -29,7 +31,9 @@ const Section = ({project}: sectionProps) => {
   const closeModal = () => setIsModalOpen(false);
 
   const handleSignOut = () => {
-    signOut(); // Cierra sesión utilizando next-auth
+    signOut(); 
+    router.push('/login');
+
   };
 
   const handleDownloadReport = async () => {

@@ -26,7 +26,7 @@ export const GET = async () => {
       throw new Error('Failed to download report');
     }
 
-    const fileBuffer = await response.arrayBuffer(); // Obtén el archivo como ArrayBuffer
+    const fileBuffer = await response.arrayBuffer(); 
     return new NextResponse(fileBuffer, {
       status: 200,
       headers: {
