@@ -1,42 +1,63 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from 'react';
 import { FaRegFolderOpen } from "react-icons/fa6";
 import { GiNetworkBars } from "react-icons/gi";
 import { LuUsers } from "react-icons/lu";
 import { FiCalendar } from "react-icons/fi";
 import { IAllProjectsResponse } from '@/app/core/application/dto';
-import styles from "./CardsContainer.module.scss";
 import Card from '@/ui/molecules/Card/Card';
+import styles from "./CardsContainer.module.scss"
 
-interface cardProps {
+interface CardProps {
   allData: IAllProjectsResponse;
 }
 
-export default function ContainerCard({ allData }: cardProps) {
+export default function ContainerCard({ allData }: CardProps) {
   const [activeProjects, setActiveProjects] = useState<string>("0");
   const [nextProjectDate, setNextProjectDate] = useState<string>("No disponible");
   const [organizersCount, setOrganizersCount] = useState<string>("0");
+  const [allProjectsData, setAllProjectsData] = useState<IAllProjectsResponse | null>(null);
 
+  // Obtener todos los proyectos
   useEffect(() => {
-    // Filtrar los proyectos activos
-    setActiveProjects(allData.data.filter(project => project.isActive).length.toString());
+    const fetchAllProjects = async () => {
+      try {
+        const response = await fetch('/api/projects/findAll');
+        const data = await response.json();
+        setAllProjectsData(data);
+      } catch (error) {
+        console.error('Error fetching all projects:', error);
+      }
+    };
 
-    // Filtrar y ordenar los proyectos por fecha para obtener el siguiente proyecto
-    const nextProject = allData.data
-      .filter(project => new Date(project.startDate) > new Date()) // Filtra los proyectos cuya fecha de inicio es mayor que la fecha actual
-      .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())[0];
+    fetchAllProjects();
+  }, []);
 
-    if (nextProject) {
-      setNextProjectDate(new Date(nextProject.startDate).toLocaleDateString());
-    } else {
-      setNextProjectDate('No disponible');
+  // Calcular estadísticas cuando tengamos todos los proyectos
+  useEffect(() => {
+    if (allProjectsData) {
+      // Calcular proyectos activos
+      const active = allProjectsData.data.filter(project => project.isActive).length;
+      setActiveProjects(active.toString());
+
+      // Calcular próximo proyecto
+      const nextProject = allProjectsData.data
+        .filter(project => new Date(project.startDate) > new Date())
+        .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())[0];
+
+      if (nextProject) {
+        setNextProjectDate(new Date(nextProject.startDate).toLocaleDateString());
+      }
+
+      // Calcular organizadores únicos
+      const uniqueOrganizers = new Set(
+        allProjectsData.data
+          .filter(project => project.organizer?.name)
+          .map(project => project.organizer.name)
+      );
+      setOrganizersCount(uniqueOrganizers.size.toString());
     }
-
-    // Contar los organizadores únicos
-    const allOrganizer = new Set(allData.data.map(project => project.organizer?.name)).size;
-    setOrganizersCount(allOrganizer.toString());
-
-  }, [allData]); // Esto se ejecutará solo cuando `allData` cambie
+  }, [allProjectsData]);
 
   return (
     <div className={styles.gridContainer}>

@@ -6,12 +6,6 @@ import { signOut } from "next-auth/react";
 import { useRouter, usePathname } from "next/navigation";
 import { LuFolderOpen, LuLogOut } from "react-icons/lu";
 import Button from '@/ui/atoms/Button';
-
-const navUserLinks = [
-    { name: "Proyectos", href: "/dashboard", icon: <LuFolderOpen /> },
-    { name: "Cerrar Sesión", href: "/", icon: <LuLogOut /> }
-];
-
 export const Sidebar: React.FC = () => {
     const router = useRouter();  
     const pathname = usePathname();
@@ -27,14 +21,31 @@ export const Sidebar: React.FC = () => {
         }
     };
 
+    const navUserLinks = [
+        { name: "Proyectos", href: "/dashboard/projects", icon: <LuFolderOpen />, isLogout: false },
+        { name: "Cerrar Sesión", href: "/", icon: <LuLogOut />, isLogout: true  }
+    ];
+
+    const clickedLink = async () => {
+        console.log("You clicked on a sidebar link. Wait to be redirected.")
+    };
+    
+
     return (
         <div className={styles.sidebarContainer}>
             <div className={styles.titleContainer}>
                 <h1 className={styles.mainTitle}>VolunteerConnect</h1>
             </div>
             <div className={styles.linksContainer}>
-                <Links href="/dashboard/projects" label="Proyectos"/>
-                <Button  onClick={handleLogout}>Cerrar session</Button>
+            {navUserLinks.map((link) => {
+                    const isActive = pathname == (link.href) ? true : false;
+                    const isLogout = (link.isLogout) ? handleLogout : clickedLink;
+
+                    return (
+                        <Links className={isActive ? `${styles.activeLink}` : ""} key={link.name} href={link.href} label={link.name} icon={link.icon} onClick={isLogout} />
+                    )
+                }
+                )}
             </div>
         </div>
     );
