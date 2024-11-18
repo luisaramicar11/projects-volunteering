@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { EndpointProjects } from "@/app/core/application/dto/model/projects.enum";
 import Button from "@/ui/atoms/Button";
+import { toast } from "react-toastify";
 
 
 interface IProjectsFormProps {
@@ -75,7 +76,7 @@ export const ProjectForm = ({ initialData, onClose }: IProjectsFormProps) => {
             reset(initialProjectsData);
             onClose();
             router.refresh();
-            
+            toast.success("Proyecto creado exitosamente")
             console.log("Proyecto creado", createdProject);
         } catch (error) {
             console.error("Error creando proyecto", error);

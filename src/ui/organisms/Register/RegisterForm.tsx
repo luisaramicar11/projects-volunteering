@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import styles from "./RegisterForm.module.scss"
 import * as yup from "yup";
-
+import { toast } from "react-toastify";
 
 const registerSchema = yup.object().shape({
     email: yup
@@ -69,7 +69,7 @@ const RegisterForm = () => {
             if (!response.ok) {
                 throw new Error("Error al registrar el usuario");
             }
-            alert('Usuario registrado exitosamente');
+            toast.success("Usuario registrado exitosamente");
             router.push("/login")
             return await response.json();
 

@@ -2,6 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { AuthProvider } from "./auth-provider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -26,6 +28,7 @@ export default function RootLayout({
         <AuthProvider>
         {children}
         </AuthProvider>
+        <ToastContainer />
       </body>
     </html>
   );
