@@ -1,19 +1,19 @@
 @import "../../../assets/styles/variables.scss";
 
 .link {
-    text-decoration: none;
-    padding: 10px;
-    margin: 0;
-    color: $text-black;
-    font-weight: 400;
-    transition: 0.4s;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-size: 14px;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0;
+  color: $text-black;
+  font-weight: 400;
+  transition: 0.4s;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
 
-    &:hover {
-        font-weight: 500;
-        transition: 0.4s;
-    }
+  &:hover {
+    font-weight: 500;
+    transition: 0.4s;
+  }
 }

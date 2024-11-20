@@ -1,6 +1,6 @@
 @import "../../../assets/styles/variables.scss";
 
-.div{
+.div {
   width: 100%;
   margin-top: 0;
   margin-left: auto;
@@ -10,55 +10,54 @@
 }
 
 .headerContainer {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  background-color: #fff;
+
+  .titleContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+  }
+
+  .buttonsContainer {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: start;
     gap: 10px;
-    padding: 10px;
-    background-color: #fff;
+  }
 
-    .titleContainer {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-    }
+  .mainTitle {
+    color: #000;
+    font-weight: bold;
+  }
 
-    .buttonsContainer {
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        gap: 10px;
-    }
-
-    .mainTitle {
-        color: #000;
-        font-weight: bold;
-    }
-
-    .profileLink {
-        color: #000;
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-    }
-    .button{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      background-color: #000;
-      color: #fff;
-      font-size: 0.8rem;
-    }
-    .divContainer{
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-    }
+  .profileLink {
+    color: #000;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.8rem;
+  }
+  .divContainer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
 }
-  

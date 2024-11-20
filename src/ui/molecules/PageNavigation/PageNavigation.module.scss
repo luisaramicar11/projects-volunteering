@@ -1,40 +1,31 @@
-
-/* Contenedor principal de la paginación */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  /* Estilo base para los botones */
-  .button {
-    padding: 8px 16px;
-    background-color: #f0f0f0; /* Gris claro para los botones */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    /* Efecto en hover */
-    &:hover {
-      background-color: #ddd;
-    }
-  
-    /* Cambia el cursor si el botón está deshabilitado */
-    &:disabled {
-      cursor: not-allowed;
-      background-color: #d3d3d3; /* Gris claro cuando está deshabilitado */
-      border-color: #aaa;
-    }
-  }
-  
-  /* Estilo para el texto de la página */
-  .pageText {
-    font-size: 16px;
-    color: #333; /* Gris oscuro para el texto */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
 
+.button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: #ddd;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #d3d3d3;
+    border-color: #aaa;
+  }
+}
+
+.pageText {
+  font-size: 16px;
+  color: #333;
+}

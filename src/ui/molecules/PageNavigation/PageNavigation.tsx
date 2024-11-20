@@ -5,11 +5,10 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import styles from "./PageNavigation.module.scss";
 import { Metadata } from "@/app/core/application/dto";
 
-// Interfaz para las props
 interface PageNavigationProps {
-  pagination: Metadata; // Datos de paginación (totalPages, currentPage, etc.)
-  onNext: () => void; // Función para ir a la siguiente página
-  onPrevious: () => void; // Función para ir a la página anterior
+  pagination: Metadata;
+  onNext: () => void;
+  onPrevious: () => void; 
 }
 
 const PageNavigation = ({
@@ -20,7 +19,7 @@ const PageNavigation = ({
   const currentPage = pagination.currentPage;
   const totalPages = pagination.totalPages;
 
-  // Deshabilitar botones si estamos en la primera o última página
+
   const isPreviousDisabled = currentPage === 1;
   const isNextDisabled = currentPage === totalPages;
 

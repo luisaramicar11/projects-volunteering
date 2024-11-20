@@ -1,9 +1,9 @@
-// app/api/projects/report/download/route.ts
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../../../auth/[...nextauth]/route"; // Asegúrate de que la ruta sea correcta
+import { authOptions } from "../../../auth/[...nextauth]/route";
 
-const API_BASE_URL = "https://communnityvolunteering-production.up.railway.app/api/v1";
+const API_BASE_URL =
+  "https://communnityvolunteering-production.up.railway.app/api/v1";
 
 export const GET = async () => {
   const session = await getServerSession(authOptions);
@@ -16,26 +16,30 @@ export const GET = async () => {
 
   try {
     const response = await fetch(`${API_BASE_URL}/projects/report/download`, {
-      method: 'GET',
+      method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
     if (!response.ok) {
-      throw new Error('Failed to download report');
+      throw new Error("Failed to download report");
     }
 
-    const fileBuffer = await response.arrayBuffer(); 
+    const fileBuffer = await response.arrayBuffer();
     return new NextResponse(fileBuffer, {
       status: 200,
       headers: {
-        'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'Content-Disposition': 'attachment; filename="reporte_proyectos.xlsx"',
+        "Content-Type":
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Content-Disposition": 'attachment; filename="reporte_proyectos.xlsx"',
       },
     });
   } catch (error) {
-    console.error('Error downloading report from external API:', error);
-    return NextResponse.json({ error: 'Error downloading report' }, { status: 500 });
+    console.error("Error downloading report from external API:", error);
+    return NextResponse.json(
+      { error: "Error downloading report" },
+      { status: 500 }
+    );
   }
 };

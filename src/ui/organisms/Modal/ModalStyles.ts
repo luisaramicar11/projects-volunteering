@@ -1,8 +1,8 @@
-"use client"
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
 
 export const ModalOverlay = styled.div<{ isOpen: boolean }>`
-  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -11,11 +11,11 @@ export const ModalOverlay = styled.div<{ isOpen: boolean }>`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000; 
+  z-index: 1000;
 `;
 
 export const ModalContent = styled.div`
-  background-color:#fff;
+  background-color: #fff;
   width: 30%;
   padding: 24px;
   margin: 10% auto;

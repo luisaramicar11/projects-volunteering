@@ -11,17 +11,19 @@ const HeaderOffline: React.FC = () => {
         <h1 className={styles.mainTitle}>VolunteerConnect</h1>
       </div>
       <div className={styles.buttonsContainer}>
-        <Button
-          className={styles.buttonLogin}
-          type="button"
-        >
-          <Links className={styles.linkLogin} href="/login" label="Iniciar Sesión" />
+        <Button className={styles.buttonLogin} type="button">
+          <Links
+            className={styles.linkLogin}
+            href="/login"
+            label="Iniciar Sesión"
+          />
         </Button>
-        <Button
-          className={styles.buttonRegister}
-          type="button"
-        >
-          <Links className={styles.linkRegister} href="/register" label="Registrarse" />
+        <Button className={styles.buttonRegister} type="button">
+          <Links
+            className={styles.linkRegister}
+            href="/register"
+            label="Registrarse"
+          />
         </Button>
       </div>
     </div>

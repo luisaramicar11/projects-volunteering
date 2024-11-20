@@ -1,27 +1,27 @@
 @import "../../../assets/styles/variables.scss";
 
-.div{
-    background-image: linear-gradient(to bottom, #e6f0ff, #ffffff);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-    
-  .containerLink{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1rem;
-    font-size: 1rem;
-    color: $text-links;
-  }
+.div {
+  background-image: linear-gradient(to bottom, #e6f0ff, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  .containerForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    font-size: 1rem;
-    color: $text-black;
-  }
+.containerLink {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: $text-links;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: $text-black;
+}

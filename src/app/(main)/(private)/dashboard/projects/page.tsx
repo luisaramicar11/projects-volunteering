@@ -1,4 +1,3 @@
-
 import { IAllProjectsRequest } from '@/app/core/application/dto';
 import { ProjectService } from '@/app/infrastructure';
 import ProjectsTemplate from '@/ui/template/Projects/Projects';

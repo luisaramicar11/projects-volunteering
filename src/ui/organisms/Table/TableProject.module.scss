@@ -1,74 +1,64 @@
-/* TableProject.module.scss */
-
-.mainContainer{
-    height: 100%;
-    padding: 1rem;
+.mainContainer {
+  height: 100%;
+  padding: 1rem;
 }
 .table {
-    width: 100%;
-    padding: 1rem;
-    border-collapse: collapse;
-  }
-  
-  .table th,
-  .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .table th {
-    font-weight: bold;
-  }
-  
-  /* Espaciado vertical entre elementos */
-  .container {
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-  
-  /* Estilo para el contenedor de la búsqueda */
-  .searchContainer {
-    padding-left: 32px;
-    padding-right: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Estilo para el input de búsqueda */
-  .searchInput {
-    width: 100%;
-    position: relative;
-  }
-  
-  /* Estilo para el spinner */
-  .spinner {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 16px;
-    width: 16px;
-    border-bottom: 2px solid #1f2937; /* Color gris oscuro */
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    from {
-      transform: translateY(-50%) rotate(0deg);
-    }
-    to {
-      transform: translateY(-50%) rotate(360deg);
-    }
-  }
-  
-  /* Texto centrado para mensajes */
-  .textCenter {
-    text-align: center;
-    padding: 16px 0;
-  }
-  
+  width: 100%;
+  padding: 1rem;
+  border-collapse: collapse;
+}
 
- 
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.searchContainer {
+  padding-left: 32px;
+  padding-right: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchInput {
+  width: 100%;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 16px;
+  width: 16px;
+  border-bottom: 2px solid #1f2937;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.textCenter {
+  text-align: center;
+  padding: 16px 0;
+}

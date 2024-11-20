@@ -1,16 +1,18 @@
-
 import { RegisterService } from "@/app/infrastructure/services/register.service";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-    const registerService = new RegisterService();
-    try {
-        const formData = await req.formData();  
-        const newUser = registerService.register(formData);
+  const registerService = new RegisterService();
+  try {
+    const formData = await req.formData();
+    const newUser = registerService.register(formData);
 
-        return NextResponse.json(newUser, { status: 200 });
-    } catch (error) {
-        console.error("Error en el servidor:", error);
-        return NextResponse.json({ error: "Error al procesar la solicitud" }, { status: 500 });
-    }
+    return NextResponse.json(newUser, { status: 200 });
+  } catch (error) {
+    console.error("Error en el servidor:", error);
+    return NextResponse.json(
+      { error: "Error al procesar la solicitud" },
+      { status: 500 }
+    );
+  }
 }

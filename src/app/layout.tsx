@@ -6,8 +6,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ["300", "400", "500", "700"] 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -22,12 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.className}`}
-      >
-        <AuthProvider>
-        {children}
-        </AuthProvider>
+      <body className={`${roboto.className}`}>
+        <AuthProvider>{children}</AuthProvider>
         <ToastContainer />
       </body>
     </html>

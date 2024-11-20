@@ -1,27 +1,27 @@
 @import "../../../../assets/styles/variables.scss";
-.tr{
-    border-bottom: 1px solid $border-input;
-    .td{
-        padding: 10px;
-        border: none;
-        text-align: left;
-    }
-    .statusInactive{
-        text-align: center;
-        font-size: 11px;
-        padding: 2px;
-        border-radius: 10px;
-        color: $text-black;
-        background: $bg-green;
-    }
+.tr {
+  border-bottom: 1px solid $border-input;
+  .td {
+    padding: 10px;
+    border: none;
+    text-align: left;
+  }
+  .statusInactive {
+    text-align: center;
+    font-size: 11px;
+    padding: 2px;
+    border-radius: 10px;
+    color: $text-black;
+    background: $bg-green;
+  }
 
-    .statusActive{
-        text-align: center;
-        font-size: 11px;
-        padding: 2px;
-        border-radius: 10px;
-        color: $text-black;
-        background: $bg-green;
-        font-weight: bold;
-    }
+  .statusActive {
+    text-align: center;
+    font-size: 11px;
+    padding: 2px;
+    border-radius: 10px;
+    color: $text-black;
+    background: $bg-green;
+    font-weight: bold;
+  }
 }

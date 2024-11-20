@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "@/ui/atoms";
-import styles from "./FormField.module.scss"
+import styles from "./FormField.module.scss";
 import {
   Control,
   Controller,
@@ -31,10 +31,7 @@ export const FormField = <T extends FieldValues>({
 }: IPropsFormField<T>) => {
   return (
     <div className={styles.div}>
-      <label
-        htmlFor={id || label.toLowerCase()}
-        className={styles.label}
-      >
+      <label htmlFor={id || label.toLowerCase()} className={styles.label}>
         {label}
       </label>
       <Controller

@@ -37,8 +37,8 @@ export const LoginForm = () => {
     reValidateMode: "onChange",
     resolver: yupResolver(loginSchema),
   });
-  
-  const router = useRouter()
+
+  const router = useRouter();
   const handleLogin = async (data: ILoginRequest) => {
     console.log(data);
     //SERVICE LOGIN
@@ -53,10 +53,10 @@ export const LoginForm = () => {
 
       if (result?.error) {
         console.log("Ocurrio un error", JSON.parse(result.error));
-        handleError(JSON.parse(result.error))
+        handleError(JSON.parse(result.error));
         return;
       }
-      router.push("/dashboard/projects")
+      router.push("/dashboard/projects");
     } catch (error) {
       console.log(error);
     }
@@ -83,13 +83,12 @@ export const LoginForm = () => {
   };
 
   return (
-    <form
-      className={styles.form}
-      onSubmit={handleSubmit(handleLogin)}
-    >
+    <form className={styles.form} onSubmit={handleSubmit(handleLogin)}>
       <Text classname={styles.h1}>Iniciar Sesión</Text>
 
-      <Text classname={styles.p}>Ingresa tus credenciales para acceder a tu cuenta</Text>
+      <Text classname={styles.p}>
+        Ingresa tus credenciales para acceder a tu cuenta
+      </Text>
 
       <FormField<ILoginRequest>
         control={control}
@@ -108,17 +107,14 @@ export const LoginForm = () => {
         error={errors.password}
         placeholder="Ingresa tu contraseña"
       />
-      <Button
-        type="submit"
-        className={styles.button}
-      >
+      <Button type="submit" className={styles.button}>
         Iniciar Sesión
       </Button>
       <Link href="" className={styles.link}>
-          ¿Olvidaste tu contraseña?
-        </Link>
+        ¿Olvidaste tu contraseña?
+      </Link>
       <Text classname={styles.div}>
-        ¿No tienes una cuenta?{' '}
+        ¿No tienes una cuenta?{" "}
         <Link href="/register" className={styles.link}>
           Regístrate aquí
         </Link>

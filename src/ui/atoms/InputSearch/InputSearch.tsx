@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./InputSearch.module.scss";
 
-interface InputProps  {
+interface InputProps {
   placeholder?: string;
   type?: string;
   name?: string;
@@ -25,7 +25,7 @@ export const InputSearch = ({
         value={value}
         placeholder={placeholder}
         className={styles.input}
-        onChange={(e)=> onChange?.(e.target.value)}
+        onChange={(e) => onChange?.(e.target.value)}
         {...props}
       />
     </div>
