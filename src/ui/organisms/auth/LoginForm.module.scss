@@ -1,13 +1,13 @@
 @import "../../../assets/styles/variables.scss";
 .form {
-    border: 1px solid #000;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 25%;
+    width: 30%;
     margin: 0 auto;
     padding: 2rem;
+    background-color: $gradient-background-white;
     
     .h1{
         text-align: center;
@@ -38,8 +38,12 @@
         color: $text-black;
         margin-bottom: 1rem;
         font-size: 0.8rem;
-        .link{
-          color: $text-links;
-        }
+        
     }
+    .link{
+        color: $text-links;
+        font-size: 0.8rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
 }

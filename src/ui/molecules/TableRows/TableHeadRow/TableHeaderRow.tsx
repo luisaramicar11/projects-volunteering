@@ -3,7 +3,7 @@ import TableDataRow from "@/ui/atoms/Tr";
 import styles from "./TableHeaderRow.module.scss"
 const TableHeaderRow: React.FC = () => {
     return (
-      <thead>
+      <thead className={styles.header}>
         <TableDataRow classname={styles.tr}>
           <TableDataHead classname={styles.th}>Título</TableDataHead>
           <TableDataHead classname={styles.th}>Descripción</TableDataHead>

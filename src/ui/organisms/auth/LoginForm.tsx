@@ -114,6 +114,9 @@ export const LoginForm = () => {
       >
         Iniciar Sesión
       </Button>
+      <Link href="" className={styles.link}>
+          ¿Olvidaste tu contraseña?
+        </Link>
       <Text classname={styles.div}>
         ¿No tienes una cuenta?{' '}
         <Link href="/register" className={styles.link}>

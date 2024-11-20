@@ -8,7 +8,7 @@ interface ILinkProps {
     href: string;
     label: string;
     target?: '_blank' | '_self';
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent) => void;
     icon?: React.ReactNode;
     className?: string;
 }

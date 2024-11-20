@@ -1,11 +1,16 @@
 @import "../../../assets/styles/variables.scss";
 
 .div{
-  width: 80%;
+  width: 100%;
+  margin-top: 0;
   margin-left: auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .headerContainer {
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -30,6 +35,7 @@
 
     .mainTitle {
         color: #000;
+        font-weight: bold;
     }
 
     .profileLink {
@@ -48,6 +54,11 @@
       background-color: #000;
       color: #fff;
       font-size: 0.8rem;
+    }
+    .divContainer{
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
     }
 }
   

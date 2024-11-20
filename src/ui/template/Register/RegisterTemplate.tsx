@@ -1,29 +1,23 @@
 'use client'
 
 import RegisterForm from "@/ui/organisms/Register/RegisterForm";
-import { useRouter } from "next/navigation";
 import styles from "./RegisterTemplate.module.scss"
-import Button from "@/ui/atoms/Button";
-
+import Link from "next/link";
 
 export default function RegisterTemplate(){
 
-    const router = useRouter();
-
-    const handleBack = () => {
-        router.push("/");
-    };
-
     return(
-        <div className={styles.divContainer}>
-            <div className={styles.div}>
-                <Button onClick={handleBack} className={styles.button}>Volver al inicio</Button>
-            </div>
-            <div className={styles.containerRegister}>
-                <div className={styles.cardContainer}>
+        <div className={styles.div}>
+            <div className={styles.containerLink}>
+            <Link href="/" className={styles.link}>
+          Volver al inicio
+        </Link>
+         </div>
+
+                <div className={styles.containerForm}>
                     <RegisterForm />
                 </div>
-            </div>
+
         </div>
     )
 }

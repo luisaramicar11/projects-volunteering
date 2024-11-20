@@ -9,11 +9,11 @@ interface CardProps {
 export default function Card({ value, title, icon }: CardProps) {
     return (
         <div className={styles.card}>
-            <div className='flex justify-between'>
+            <div className={styles.containerCard}>
                 <h3>{title}</h3>
                 <span>{icon}</span>
             </div>
-            <p className='font-bold text-[2em]'>{value}</p>
+            <p >{value}</p>
         </div>
     );
 }

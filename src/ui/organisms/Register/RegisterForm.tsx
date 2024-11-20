@@ -111,7 +111,7 @@ const RegisterForm = () => {
                 placeholder="Ingrese Nombre"
             />
 
-            <div>
+            <div className={styles.containerPhoto}>
                 <FormSelectField<IRegisterRequest>
                     control={control}
                     options={[

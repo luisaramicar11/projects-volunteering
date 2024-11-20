@@ -21,7 +21,9 @@ const TableRow: React.FC<TableRowProps> = ({ title, description, startDate, endD
             <TableDataCell classname={styles.td}>{description}</TableDataCell>
             <TableDataCell classname={styles.td}>{(startDate).toString()}</TableDataCell>
             <TableDataCell classname={styles.td}>{(endDate).toString()}</TableDataCell>
-            <TableDataCell classname={styles.td}>{isActive? 'Active' : 'Inactive'}</TableDataCell>
+            <TableDataCell classname={styles.td}>
+                {isActive? (<p className={styles.statusActive}>Active</p>) : (<p className={styles.statusInactive}>Inactive</p>)}
+            </TableDataCell>
             <TableDataCell classname={styles.td}>{organizer}</TableDataCell>
             <TableDataCell classname={styles.td}><ActionButtons onEdit={onEdit} onDelete={onDelete}/></TableDataCell> 
         </TableDataRow>

@@ -25,7 +25,7 @@ const projectService = new ProjectService();
 
 export default async function ProjectPage({searchParams}: IProps){
     const page = searchParams.page ? parseInt(searchParams.page.toString()): 1;
-    const data = await projectService.findAll({page, size:8});
+    const data = await projectService.findAll({page, size:3});
     return (
         <ProjectsTemplate data={data} pagination={data.metadata}/>
     )

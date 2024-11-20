@@ -21,7 +21,7 @@ const InputSelect = ({
                 className={styles.select}
                 {...props}
             >
-                <option>{placeholder}</option>
+                <option className={styles.option}>{placeholder}</option>
                 {options.map(({ value, label }) => (
                     <option key={value} value={value}>{label}</option>
                 ))}

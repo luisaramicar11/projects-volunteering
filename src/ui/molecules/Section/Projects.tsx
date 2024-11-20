@@ -71,6 +71,7 @@ const Section = ({project}: sectionProps) => {
       <div className={styles.titleContainer}>
         <h1 className={styles.mainTitle}>Dashboard de Proyectos</h1>
       </div>
+      <div className={styles.divContainer}>
       <Button className={styles.button} onClick={handleDownloadReport}>
       {<LuFileSpreadsheet />}
       Descargar Reporte
@@ -81,6 +82,8 @@ const Section = ({project}: sectionProps) => {
       </Button>
       <Dropdown user={user} signOut={handleSignOut}/>
           <Modal isOpen={isModalOpen} onClose={closeModal} project={project} />
+      </div>
+      
     </div>
     </div>
     

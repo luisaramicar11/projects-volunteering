@@ -1,8 +1,8 @@
 
-import { Sidebar } from "@/ui/organisms";
 import { Roboto } from "next/font/google";
 import styles from "./layout.module.scss"; // Archivo CSS/Sass para los estilos
 import AuthGuard from "./guard/AuthGuard";
+import { Sidebar } from "@/ui/organisms";
 
 const roboto = Roboto({
   subsets: ['latin'],
